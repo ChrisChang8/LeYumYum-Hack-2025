@@ -1,0 +1,173 @@
+.filter-group select:disabled {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Filter Spacing */
+.space-y-4 > * + * {
+  margin-top: 2rem;
+}
+
+/* Restaurant Tags */
+.tag-close-button {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  padding: 0.2rem 0.2rem;
+  font-size: 0.88rem;
+  line-height: 1;
+}
+
+.tag-close-button:hover {
+  opacity: 1;
+}
+
+/* Selected Restaurant Tags */
+[class*="bg-primary/20"] {
+  font-size: 0.77rem;
+  padding: 0.22rem 0.44rem;
+  gap: .7rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Restaurant Tags Container */
+.flex.flex-wrap.gap-1.mt-2 {
+  gap: 0.22rem !important;
+  margin-top: 0.44rem !important;
+}
+
+/* Dropdown Spacing */
+.space-y-2 > * + * {
+  margin-top: 1.75rem;
+}
+
+/* Sidebar Toggle */
+.sidebar-toggle {
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+/* Collapsed Sidebar */
+aside:not([class*="w-64"]) .sidebar-toggle {
+  transform: rotate(180deg);
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-progress {
+  animation: progress 2s ease-in-out;
+  width: 100%;
+}
+
+/* Filter Mode Toggle Animation */
+.filter-mode-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.filter-mode-slider {
+  position: absolute;
+  top: 4px;
+  height: calc(100% - 8px);
+  width: calc(50% - 4px);
+  background: rgba(255, 255, 255, 0.043);
+  border-radius: 0.375rem;
+  transition: transform 0.3s ease;
+}
+
+.filter-mode-slider[data-state="custom"] {
+  transform: translateX(1px);
+}
+
+.filter-mode-slider[data-state="ai"] {
+  transform: translateX(calc(100% + 0px));
+}
+
+.filter-mode-button {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.filter-mode-button[data-active="true"] {
+  color: rgb(255, 255, 255);
+}
+
+.filter-mode-button[data-active="false"] {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Modal Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-animation {
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+/* Nutrient Progress Bar */
+.nutrient-bar {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nutrient-bar:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nutrient-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+/* Health-based colors */
+.nutrient-bar-fill[data-health="low"] {
+  background: linear-gradient(90deg, rgba(234, 179, 8, 0.2) 0%, rgba(234, 179, 8, 0.3) 100%);
+}
+
+.nutrient-bar-fill[data-health="good"] {
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.3) 100%);
+}
+
+.nutrient-bar-fill[data-health="high"] {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.2) 0%, rgba(239, 68, 68, 0.3) 100%);
+}
+
+.nutrient-bar-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.75rem;
+  height: 100%;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nutrient-bar-label {
+  font-weight: 500;
+}
+
+.nutrient-bar-value {
+  font-variant-numeric: tabular-nums;
+}
